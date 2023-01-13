@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script src=
+"https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+        <script>
+            var allObject = [];
+
+
+            function addObj(){
+
+                if($("#name").val().length<6){
+                    var obj = $("#name").val()+" "+$("#address").val()+" "+$("#hobbies").val()+"<br>";
+                    
+                    allObject.push(obj);
+                    $("#name").val("");
+                    $("#address").val("");
+                    $("#hobbies").val("");
+                }else{
+                    alert("Name Should be less than 6 characters");
+                }
+                
+            }
+            function disp(){
+                $("#myDiv").css('background-color', 'red')
+                $("#display").html(allObject);              
+
+            }
+        </script>
+        <style>
+            div {
+                width: 100%;
+                size: 100%;
+                border: 0px solid blue;
+                margin: 20px;
+                padding: 50px;
+                background-color: lightblue;
+                }
+
+                #name:focus { background: yellow; }
+
+        </style>
+    </head>
+    <body>
+        <div id="myDiv">
+            <label for="name">Name:  </label>&nbsp;&nbsp;
+            <input type="text" id="name" name="name">
+            <br><br>
+            <label for="address">Address:  </label>&nbsp;&nbsp;
+            <input type="text" id="address" name="address">
+            <br><br>
+            <label for="hobbies">Hobbies:  </label>&nbsp;&nbsp;
+            <input type="text" id="hobbies" name="hobbies">
+            <br><br>
+            <br><br>
+            <button type="button" onclick="addObj()" >Add Object</button>
+            <button type="button" onclick="disp()" >Display Object</button>
+            
+        <br><br>
+            <span id="display"></span>
+        </div>
+
+    </body>
+</html>
