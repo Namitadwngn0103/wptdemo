@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+        
+    </body>
+    <script>
+        let employees = [ {id:1,name:'Bob',salary:30000},{id:2,name:'Tim',salary:20000},{id:3,name:'Rao',salary:40000},{id:4,name:'Namita',salary:50000}];
+        
+        var html = "<table border='1|1'>" +
+            "<tr>"+
+                "<th>Employee ID</th>"+
+                "<th>Employee Name</th>"+
+                "<th>Employee Salary</th>"+
+            "</tr>";
+        employees.forEach((emp)=>printTable(emp));
+        html+="</table>";
+        document.getElementById("box").innerHTML = html;
+
+        function printTable(emp){
+                html+="<tr>";
+                html+="<td>"+emp.id+"</td>";
+                html+="<td>"+emp.name+"</td>";
+                html+="<td>"+emp.salary+"</td>";
+                html+="</tr>";
+
+        }
+
+
+    </script>
+</html>

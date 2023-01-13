@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <script src=
+"https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+        <script>
+            $(document).ready(function () {
+            
+                $("#chngColor").click(function () {
+                    
+                    $("#q1 input[type=text]")
+                        .each(function () {
+
+                    if (this.value==""){
+                            this.style.backgroundColor = "";
+                        }
+                        else{
+                            this.style.backgroundColor = "yellow";
+                        }
+                    });
+                })
+
+                $("#addElement").click(function () {
+
+                    if ($("#dep1").val() == "") {
+                        $("#depCol").css('display', 'none');
+                        
+                    }
+                    else{
+                        $("#depCol").css('display', 'block');
+                    }
+
+                })
+
+                $("#chngBgr").click(function () {
+
+                
+                    $("#depCol").css('background-color', 'orange');
+                    
+
+                })
+
+        });
+
+        </script>
+        <style>
+            div {
+                width: 700px;
+                border: 5px solid black;
+                padding: 50px;
+                margin: 20px;
+                }
+        </style>
+    </head>
+    <body><form id="q1">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name:  </label>&nbsp;&nbsp;
+                        <input type="text" id="name" name="name">
+                        <br><br>
+                        <label for="address">Address:  </label>&nbsp;&nbsp;
+                        <input type="text" id="address" name="address">
+                        <br><br>
+                        <label for="age">Age:  </label>&nbsp;&nbsp;
+                        <input type="text" id="age" name="age">
+                        <br><br>
+                        <label for="dep">No Of Dependents:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dep1" name="dep">
+                        <br><br>
+                        <button type="button" id="chngColor"  >Change Color</button>
+                        <button type="button" id="addElement"  >Add Element</button>
+                        <button type="button" id="chngBgr"  >Change Background</button>
+                    </td>
+                    <td id="depCol" style="display: none;"> 
+                        <label for="dname">Dependent Name:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dname" name="dname">
+                        <br><br>
+                        <label for="dage">Dependent Age:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dage" name="dage">
+                        <br><br>
+                        <label for="dgender">Dependent Gender:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dgender" name="dgender">
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+    </form>
+    </body>
+</html>
