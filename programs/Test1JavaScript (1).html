@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script>
+            function chngColor(){
+                var inele = document.getElementsByTagName('input');
+                for (i = 0; i < inele.length; i++) {
+                    if (inele[i].type == 'text') {
+                        if(inele[i].value == ""){
+                            inele[i].style.backgroundColor = "";
+                        }
+                        else{
+                            inele[i].style.backgroundColor = "yellow";
+                        }
+
+                    }
+
+                }
+            }
+
+            function addElement(){
+                var depCol = document.getElementById("depCol");
+                var dep = document.getElementById("dep");
+                if (dep.value == "") {
+                    depCol.style.display = "none";
+                    
+                }
+                else{
+                    depCol.style.display = null;
+                }
+            }
+            function chngBgr(){
+                var depCol = document.getElementById("depCol");
+                depCol.style.backgroundColor = "orange";
+
+            }
+        </script>
+        <style>
+            div {
+                width: 700px;
+                border: 5px solid black;
+                padding: 50px;
+                margin: 20px;
+                }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name:  </label>&nbsp;&nbsp;
+                        <input type="text" id="name" name="name">
+                        <br><br>
+                        <label for="address">Address:  </label>&nbsp;&nbsp;
+                        <input type="text" id="address" name="address">
+                        <br><br>
+                        <label for="age">Age:  </label>&nbsp;&nbsp;
+                        <input type="text" id="age" name="age">
+                        <br><br>
+                        <label for="dep">No Of Dependents:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dep" name="dep">
+                        <br><br>
+                        <button type="button" onclick="chngColor()" >Change Color</button>
+                        <button type="button" onclick="addElement()" >Add Element</button>
+                        <button type="button" onclick="chngBgr()" >Change Background</button>
+                    </td>
+                    <td id="depCol"> 
+                        <label for="dname">Dependent Name:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dname" name="dname">
+                        <br><br>
+                        <label for="dage">Dependent Age:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dage" name="dage">
+                        <br><br>
+                        <label for="dgender">Dependent Gender:  </label>&nbsp;&nbsp;
+                        <input type="text" id="dgender" name="dgender">
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
